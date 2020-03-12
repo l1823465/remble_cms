@@ -20,6 +20,22 @@ class UserController extends Controller {
         ctx.cookies.set('crmToken',crmToken)
         ctx.body=app.sendMes(0,'登录成功')
   }
+  async list(){
+    let {ctx,app}=this
+    let data =await ctx.service.user.list();
+    ctx.body=app.sendMes(0,'',data)
+  }
+  async black(){
+    let {ctx,app}=this
+    let {id}=ctx.request.body;
+   
+    let res =await ctx.service.user.black(id);  
+if(res.affectedRows===1){
+  let data =await ctx.service.user.list();
+  ctx.body=app.sendMes(0,'更新成功',data)
+}
+    
+  }
 }
 
 module.exports = UserController;

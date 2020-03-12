@@ -7,14 +7,18 @@ const { Header, Content, Sider } = Layout;
 export default (props)=> {
     const {httpSuccess}=React.Meili
     const [list,setList]=useState([])
-    // const [name,setName]=useState('')
     useEffect(()=>{
-      // if(!list.length){
         httpSuccess(['get','/crm/homemenu'],data=>{
           console.log(1);
           setList(data)
-      },[])
-    })
+      })} ,[])
+      let loginout=()=>{
+        localStorage.clear()
+        httpSuccess(['get','/login/out'],()=>{
+          alert('退出成功')
+          props.history.push('/login')
+        })
+      }
         return (
             <Layout style={{ minHeight: '100vh' }}>
       <Sider width={200} className="site-layout-background">
@@ -41,7 +45,9 @@ export default (props)=> {
         </Menu>
       </Sider>
       <Layout >
-      <Header className="site-layout-background"/>
+      <Header className="site-layout-background">
+      <div className="user_message">{localStorage.user}<span onClick={()=>{loginout()}}>退出</span></div>
+      </Header>
         <Content className="site-layout-background" style={{margin:"15px"}} >
           <React.Meili.Routerview routes={props.routes}></React.Meili.Routerview>
         </Content>

@@ -22,13 +22,7 @@ export default ()=>{
           key: 'place',
         },
     ];
-    useEffect(()=>{
-        httpSuccess(['get','/crm/purpose'],data=>{
-            console.log(data);
-            
-        setList(data)})
-    },[])
-
+    useEffect(()=>httpSuccess(['get','/crm/purpose'],data=>{setList(data) }),[])
     return (
         <div>
             <Table rowKey={i=>i.id} dataSource={list} columns={columns} />;

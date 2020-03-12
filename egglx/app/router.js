@@ -26,4 +26,6 @@ module.exports = app => {
   router.post('/crm/login',controller.crm.user.login)
   router.get('/crm/homemenu', controller.crm.home.menu);
 router.get('/crm/purpose',controller.crm.purpose.list)
+router.get('/crm/userlist',controller.crm.user.list)
+router.post('/crm/userblack',controller.crm.user.black)
 };

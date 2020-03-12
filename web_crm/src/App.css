@@ -29,3 +29,12 @@ code {
   font-weight: 600;
   border-right: 1px solid gray;
 }
+
+.user_message{
+  color:#fff;
+  float:right;
+}
+.user_message span{
+  margin: 0 20px;
+  cursor: pointer;
+}

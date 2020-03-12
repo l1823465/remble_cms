@@ -29,6 +29,11 @@ module.exports=(options)=>{
            ctx.body=ctx.app.sendMes(1,'登录超时，请重新登录')
            return 
        }
+       if(url.parse(ctx.url).pathname=='/login/out'){
+           ctx.cookies.set(source+'Token',null)
+           ctx.body=ctx.app.sendMes(0,'退出成功')
+           return
+       }
        ctx.info=info;
        await next()
 

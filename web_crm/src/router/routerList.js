@@ -12,6 +12,8 @@ import Login from '../views/login'
 import Home from '../views/home'
 import Staff from '../views/home/staff'
 import Amzing from '../views/home/amzing'
+import User from '../views/home/user'
+
 let list = [
     {
         path: '/login',
@@ -28,7 +30,7 @@ let list = [
                 component:()=><div>添加列表</div>
             },{
                 path:'/home/user',
-                component:()=><div>用户列表</div>
+                component:User
             },{
                 path:'/home/amzinglist',
                 component:Amzing
