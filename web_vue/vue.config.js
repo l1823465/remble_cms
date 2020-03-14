@@ -1,10 +1,6 @@
 module.exports = {
   lintOnSave: false,
   devServer:{
-    proxy:{
-      '/api':{
-        target:'http://localhost:7001'
-      }
-    }
+    proxy:'http://localhost:7001'
   }
 }

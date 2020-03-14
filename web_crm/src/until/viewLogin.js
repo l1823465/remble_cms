@@ -1,16 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 export default (Com) => {
-    return class ViewLogin extends Component {
-        componentDidMount() {
+    return props=> {
             if (!localStorage.user) {
-                this.props.history.push('/login')
+                props.history.push('/login')
+                return 
             }
-        }
-        
-        render() {
             return (
-                <Com {...this.props}/>
+                <Com {...props}/>
             );
-        }
     }
 }

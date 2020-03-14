@@ -145,8 +145,13 @@ export default {
       })
  },
     loginOut(){
+      let {$httpSuccess}=this
         this.clearCookie();
-        this.isLogin=false
+$httpSuccess(['get','/login/out'],()=>{
+  alert('退出成功')
+   this.isLogin=false
+})
+       
     },
     navClick(key){
       sessionStorage.setItem('nowNav',key);

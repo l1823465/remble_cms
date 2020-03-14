@@ -7,7 +7,7 @@ class UserService extends Service {
     return await this.app.mysql.select('user',{where:{user}})
   }
   async registry(obj){
-   return await this.app.mysql.insert('user',{...obj})
+   return await this.app.mysql.insert('user',{...obj,status:1})
   }
   async list(){
     return await this.app.mysql.select('user',{where:{status:'1'}})

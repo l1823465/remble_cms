@@ -18,8 +18,8 @@ module.exports = app => {
   router.post('/api/productSerach',controller.web.product.search)
   router.post('/api/productDetail',controller.web.product.detail)
 
-// router.get('/api/blogList',controller.web.blog.list)
-// router.post('/api/blogSearch',controller.web.blog.search)
+router.get('/api/blogList',controller.web.blog.list)
+router.post('/api/blogSearch',controller.web.blog.search)
 
 
 // crm

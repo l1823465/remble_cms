@@ -8,6 +8,7 @@
  * 路由数组
  */
 import React from 'react'
+import Hight from '../until/viewLogin'
 import Login from '../views/login'
 import Home from '../views/home'
 import Staff from '../views/home/staff'
@@ -20,20 +21,20 @@ let list = [
         component: Login
     },{
         path: '/home',
-        component: Home,
+        component: Hight(Home),
         children:[
             {
                 path: '/home/staff',
                 component: Staff
             },{
                 path:'/home/staffadd',
-                component:()=><div>添加列表</div>
+                component:()=><div>添加职员</div>
             },{
                 path:'/home/user',
-                component:User
+                component:Hight(User)
             },{
                 path:'/home/amzinglist',
-                component:Amzing
+                component:Hight(Amzing)
             },{
                 path:'/home/contact',
                 component:()=><div>联系我们</div>
@@ -54,8 +55,8 @@ let list = [
                 component:()=><div>游记列表</div>
             },{
                 path:'/home/bookadd',
-                component:()=><div>游记管理</div>
-            }
+                component:()=><div>添加游记</div>
+            },
         ]
     },{
         redirect:'/login'

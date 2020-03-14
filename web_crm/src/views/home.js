@@ -8,10 +8,11 @@ export default (props)=> {
     const {httpSuccess}=React.Meili
     const [list,setList]=useState([])
     useEffect(()=>{
-        httpSuccess(['get','/crm/homemenu'],data=>{
-          console.log(1);
+         httpSuccess(['get','/crm/homemenu'],data=>{
+          console.log('菜单表');
           setList(data)
-      })} ,[])
+      })
+    } ,[])
       let loginout=()=>{
         localStorage.clear()
         httpSuccess(['get','/login/out'],()=>{

@@ -17,9 +17,9 @@ const menu=require('./menu')
   config.keys = appInfo.name + '_1581930221518_4259';
 
   // add your middleware config here
-  config.middleware = ['jianquan'];
+  config.middleware = ['jianquan','urlType'];
 config.jianquan=writeList
-config.menu=menu
+config.urlType=menu
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',

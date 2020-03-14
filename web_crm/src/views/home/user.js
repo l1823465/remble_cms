@@ -28,7 +28,11 @@ export default ()=>{
             render: value => <Tag onClick={()=>joinBlack(value)}>加入黑名单</Tag>            
         }
     ];
-     useEffect(()=>httpSuccess(['get','/crm/userlist'],data=>{setList(data) }),[])
+    useEffect(()=>{
+      httpSuccess(['get','/crm/userlist'],data=>{
+        console.log('用户表');
+        setList(data)
+    })} ,[])
   let   joinBlack=id=>{
     httpSuccess(['post','/crm/userblack',{id}],data=>setList(data))
     }

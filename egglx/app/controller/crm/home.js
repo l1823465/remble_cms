@@ -6,8 +6,8 @@ class HomeController extends Controller {
   async menu() {
             let {ctx,app}=this;
             let {roleid}=ctx.info
-            let role=await app.mysql.select('role_menu',{where:{roleid}})
-            let {menu}=app.config
+            let role=await ctx.service.crm.home.menu(roleid)
+            let menu=app.config.urlType
             let data=[]
             role.map(v=>v.menu).map(item=>{
                 let obj={

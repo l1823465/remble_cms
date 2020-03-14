@@ -1,5 +1,5 @@
 <template>
-  <div class="top">
+  <div :class="isShow ?'top':'toptwo'" >
     <Header @changeIsShow="changeIsShow"/>
     <Search v-show="isShow" />
     <Swipers v-show="isShow" />
@@ -37,5 +37,9 @@ this.isShow=flag
     min-width: 1200px;
     height: 650px;
     overflow: hidden;
+  }
+  .toptwo{
+     min-width: 1200px;
+    height: 500px;
   }
 </style>

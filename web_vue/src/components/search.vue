@@ -39,7 +39,7 @@ export default {
   },
   methods:{
     async submit(){
-      const {name,mouth,person,place,$isNull,dataJson,$$httpSuccess}=this
+      const {name,mouth,person,place,$isNull,dataJson,$httpSuccess}=this
       let subData={name,mouth,person,place}
       $isNull([dataJson('名字',name)],()=>$httpSuccess(['post','/api/travelSub',subData]))
    }

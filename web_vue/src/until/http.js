@@ -10,7 +10,7 @@ function http(method,url,data={}){
     configData[type]=data;
     configData.headers={
         versions:'1.0.0',
-        source:'meili'
+        source:'web'
     }
     return axios(configData).catch(err=>{
         if(err.response.status===500)return $message.error('服务器错误')
