@@ -26,7 +26,7 @@ export default ()=>{
       httpSuccess(['get','/crm/purpose'],data=>{
         console.log('意向表');
         setList(data)
-    })} ,[])
+    })} ,[setList,httpSuccess])
     return (
         <div>
             <Table rowKey={i=>i.id} dataSource={list} columns={columns} />;

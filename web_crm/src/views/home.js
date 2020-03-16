@@ -12,7 +12,7 @@ export default (props)=> {
           console.log('菜单表');
           setList(data)
       })
-    } ,[])
+    } ,[setList,httpSuccess])
       let loginout=()=>{
         localStorage.clear()
         httpSuccess(['get','/login/out'],()=>{

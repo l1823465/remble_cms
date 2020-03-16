@@ -32,7 +32,7 @@ export default ()=>{
       httpSuccess(['get','/crm/userlist'],data=>{
         console.log('用户表');
         setList(data)
-    })} ,[])
+    })} ,[httpSuccess,setList])
   let   joinBlack=id=>{
     httpSuccess(['post','/crm/userblack',{id}],data=>setList(data))
     }
