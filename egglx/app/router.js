@@ -28,4 +28,10 @@ router.post('/api/blogSearch',controller.web.blog.search)
 router.get('/crm/purpose',controller.crm.purpose.list)
 router.get('/crm/userlist',controller.crm.user.list)
 router.post('/crm/userblack',controller.crm.user.black)
+router.get('/crm/stafflist',controller.crm.staff.list)
+router.post('/crm/staffadd',controller.crm.staff.add)
+router.put('/crm/staffupdate',controller.crm.staff.leave)
+router.post('/crm/staffdetail',controller.crm.staff.detail)
+router.get('/crm/rolelist',controller.crm.role.list)
+
 };

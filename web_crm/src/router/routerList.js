@@ -1,17 +1,15 @@
-/*
- * @Author: your name
- * @Date: 2019-12-10 10:43:03
- * @LastEditTime: 2019-12-10 11:40:53
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Editp
- * @FilePath: \myreact\src\router\routerList.js
- * 路由数组
- */
 import React from 'react'
 import Hight from '../until/viewLogin'
 import Login from '../views/login'
 import Home from '../views/home'
-import Staff from '../views/home/staff'
+import Staff from '../views/staff'
+import StaffAdd from '../views/staff/add'
+import StaffLook from '../views/staff/look'
+import RoleList from '../views/role'
+import RoleAdd from '../views/role/add'
+import BlogList from '../views/blog'
+import BlogAdd from '../views/blog/add'
+import BlogDetail from '../views/blog/detail'
 import Amzing from '../views/home/amzing'
 import User from '../views/home/user'
 
@@ -28,7 +26,10 @@ let list = [
                 component: Staff
             },{
                 path:'/home/staffadd',
-                component:()=><div>添加职员</div>
+                component:StaffAdd
+            },{
+                path:'/home/stafflook',
+                component:StaffLook
             },{
                 path:'/home/user',
                 component:Hight(User)
@@ -40,10 +41,10 @@ let list = [
                 component:()=><div>联系我们</div>
             },{
                 path:'/home/rolelist',
-                component:()=><div>角色列表</div>
+                component:RoleList
             },{
                 path:'/home/roleadd',
-                component:()=><div>添加角色</div>
+                component:RoleAdd
             },{
                 path:'/home/productlist',
                 component:()=><div>产品列表</div>
@@ -52,11 +53,16 @@ let list = [
                 component:()=><div>添加产品</div>
             },{
                 path:'/home/booklist',
-                component:()=><div>游记列表</div>
+                component:BlogList
             },{
                 path:'/home/bookadd',
-                component:()=><div>添加游记</div>
-            },
+                component:BlogAdd
+            },{
+                path:'/home/blogdetail',
+                component:BlogDetail
+            },{
+                redirect:'/home/staff'
+            }
         ]
     },{
         redirect:'/login'
