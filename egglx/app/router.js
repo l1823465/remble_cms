@@ -33,5 +33,7 @@ router.post('/crm/staffadd',controller.crm.staff.add)
 router.put('/crm/staffupdate',controller.crm.staff.leave)
 router.post('/crm/staffdetail',controller.crm.staff.detail)
 router.get('/crm/rolelist',controller.crm.role.list)
+router.get('/crm/rolemenu',controller.crm.role.menu)
+router.post('/crm/rolesubmit',controller.crm.role.submit)
 
 };

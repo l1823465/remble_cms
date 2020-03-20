@@ -13,6 +13,7 @@ module.exports = appInfo => {
   const config = exports = {};
 const writeList=require('./writeList')
 const menu=require('./menu')
+const Oprs =require('./opr')
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1581930221518_4259';
 
@@ -20,6 +21,7 @@ const menu=require('./menu')
   config.middleware = ['jianquan','urlType'];
 config.jianquan=writeList
 config.urlType=menu
+config.opr=Oprs
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
