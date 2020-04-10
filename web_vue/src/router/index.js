@@ -5,7 +5,7 @@ import Main from '../views/main.vue'
 import Product from '../views/product.vue'
 import Detail from '../views/detail.vue'
 import Blog from '../views/blog.vue'
-
+import Asd from '../views/asd.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -24,6 +24,9 @@ const routes = [
         { path: 'contcat', name: 'contcat', component: Main},
         {path:'/home',redirect:'/home/main'}
       ]
+    },
+    {
+      path: '/asd', name: 'asd', component: Asd
     },{
       path:'/',
       redirect:'/home'
